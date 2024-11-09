@@ -11,4 +11,4 @@
 
 ## Docs
 
-[Postman](https://g30000.postman.co/workspace/9bb83054-899a-4df6-876a-eba00f2463f6)
+[Postman](https://g30000.postman.co/workspace/g3-helpmate~b0d24dfa-cfd5-4ded-867d-6a24b9b9d68c)
