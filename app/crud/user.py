@@ -21,7 +21,13 @@ def create_user(user: user_schema.UserCreate, db: Session):
         password=user.password,
     )
 
-    # 데이터베이스에 추가
-    db.add(db_user)
-    db.commit()
-    db.refresh(db_user)
+    try:
+        # 데이터베이스에 추가
+        db.add(db_user)
+        db.commit()
+        db.refresh(db_user)
+    except Exception:
+        db.rollback()
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
+    return db_user

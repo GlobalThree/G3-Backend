@@ -13,6 +13,11 @@ engine = create_engine(
 # 세션 팩토리 생성
 SessionLocal = sessionmaker(bind=engine, autoflush=False)
 
+# 데이터베이스에 정의된 모든 테이블을 생성합니다.
+# 이미 존재하는 테이블은 무시되므로, 안전하게 여러 번 호출할 수 있습니다.
+# 주로 개발 환경에서 초기 설정 시 사용됩니다.
+# Base.metadata.create_all(bind=engine)
+
 
 # 데이터베이스 세션을 얻기 위한 의존성 함수
 def get_db():
